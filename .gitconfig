@@ -1,0 +1,9 @@
+[user]
+	name = Derek Reese
+	email = dreese@redhat.com
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abrev-commit
+	ss = stash show stash^{/} -p
+	sa = stash apply stash^{/}
+	crn = "!crn() { git log --pretty='%s' $1..$2 | sed -e '/^Merge/ d' | xclip -selection c; }; crn"
+	cbn = "!cbn() { git cherry -v develop | sed -e 's/^.\\{0,43\\}//' | xclip -selection c; }; cbn"
