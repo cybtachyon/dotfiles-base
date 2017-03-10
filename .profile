@@ -7,7 +7,7 @@
 
 export PATH="$HOME/.config/composer/vendor/bin:$PATH" # Add composer vendor bin to PATH
 #export PATH="/usr/local/php7/bin:$PATH" # Add PHP to PATH
-export PATH="$PATH$HOME/.dotfiles/dotfiler/bin:"
+export PATH="$PATH$HOME/.dotfiles/bin:"
 
 export EDITOR=vim
 
