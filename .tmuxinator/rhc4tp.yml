@@ -10,26 +10,26 @@ windows:
       layout: 0b0a,180x49,0,0{118x49,0,0[118x24,0,0,6,118x24,0,25,3],61x49,119,0,4}
       panes:
         - git:
-          - cd rhc4tp
+          - cd ./rhc4tp
           - clear
           - git status
         - vagrant:
-          - cd rhc4tp/Vagrant
+          - cd ./rhc4tp/Vagrant
           - clear
-          - vagrant up && vagrant ssh
+          - vagrant up && vagrant ssh -- -t 'cd /var/www/rhc4tp/Connect/sites/default; /bin/bash'
         - debug:
-          - cd rhc4tp/Vagrant
+          - cd ./rhc4tp/Vagrant
           - sleep 140
           - clear
-          - vagrant ssh -- -t 'cd /var/www/rhc4tp/Connect/sites/default; /bin/bash drush ws --tail'
+          - vagrant ssh -- -t 'cd /var/www/rhc4tp/Connect/sites/default; /bin/bash << drush ws --tail'
   - theme:
       layout: main-horizontal
       panes:
         - root:
-          - cd rhc4tp/Connect/sites/all/themes/rhc4tp
+          - cd ./rhc4tp/Connect/sites/all/themes/rhc4tp
           - clear
         - compiler:
-          - cd rhc4tp/Connect/sites/all/themes/rhc4tp
+          - cd ./rhc4tp/Connect/sites/all/themes/rhc4tp
           - sleep 140
           - clear
           - grunt s

@@ -16,7 +16,10 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
 ## Bash auto-completion scripts
-# Git
+if [ -f /etc/bash_completion ]; then
+ . /etc/bash_completion
+fi
+
 if [ -f ~/.gitcompletion.bash ]; then
   . ~/.git-completion.bash
 fi
