@@ -15,6 +15,8 @@ fi
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
+export DISABLE_AUTO_TITLE=true
+
 ## Bash auto-completion scripts
 if [ -f /etc/bash_completion ]; then
  . /etc/bash_completion

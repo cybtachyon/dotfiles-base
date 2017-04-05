@@ -19,6 +19,7 @@ set statusline+=col:\ %c
 set autoindent
 set background=dark
 set cmdheight=2
+set pastetoggle=<F2>
 syntax on
 
 " Better commandline completion.
