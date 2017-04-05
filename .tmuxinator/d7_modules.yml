@@ -1,0 +1,32 @@
+###
+ # ~/.tmuxinator/d7_modules.yml
+ ##
+
+name: d7_modules
+root: /home/dreese/Repos/d7_modules
+
+windows:
+  - local:
+      layout: 0b0a,180x49,0,0{118x49,0,0[118x24,0,0,6,118x24,0,25,3],61x49,119,0,4}
+      panes:
+        - git:
+          - cd ./d7/
+          - clear
+          - git status
+        - vagrant:
+          - cd ./d7/
+          - clear
+          - vagrant up
+          - vagrant ssh
+          - cd /var/www/d7/sites/default
+        - debug:
+          - cd ./d7/
+          - sleep 140
+          - clear
+          - vagrant ssh -- -t 'cd /var/www/d7/sites/default; /bin/bash --rcfile <(echo ". ~/.bashrc; drush ws --tail")'
+  - project:
+      layout: main-horizontal
+      panes:
+        - main:
+        - phpstorm: phpstorm .
+
