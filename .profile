@@ -7,7 +7,7 @@
 
 export PATH="$HOME/.config/composer/vendor/bin:$PATH" # Add composer vendor bin to PATH
 #export PATH="/usr/local/php7/bin:$PATH" # Add PHP to PATH
-export PATH="$PATH$HOME/.dotfiles/bin:"
+export PATH="$HOME/.dotfiles/bin:$PATH"
 
 export EDITOR=vim
 
@@ -43,7 +43,7 @@ untarz() {
 
 ## Git Aliases
 # Visual Log with Graph
-git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abrev-commit"
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 # Stash
 git config --global alias.ss "stash show stash^{/$*} -p"
 git config --global alias.sa "stash apply stash^{/$*}"
