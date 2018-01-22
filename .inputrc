@@ -10,8 +10,8 @@ TAB: menu-complete
 "\e[Z": "\e-1\C-i"
 set menu-complete-display-prefix on
 
-# Display matches for ambiguous patterns at first tab press
-set show-all-if-ambiguous on
+# Do not Display matches for ambiguous patterns at first tab press
+set show-all-if-ambiguous off
 
 # Immediately add a trailing slash when autocompleting symlinks to directories
 set mark-symlinked-directories on
@@ -30,7 +30,7 @@ set match-hidden-files off
 set page-completions off
 
 # If there are more possible completions for a word, do ask to show them all
-set completion-query-items -1
+set completion-query-items 0
 
 # Show extra file information when completing, like `ls -F` does
 set visible-stats on

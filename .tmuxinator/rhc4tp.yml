@@ -14,31 +14,39 @@ windows:
           - cd ./rhc4tp/
           - clear
           - git status
-        - vagrant:
-          - cd ./rhc4tp/Vagrant
+        - docker:
+          - cd ./rhc4tp/sandbox/local-sandbox
+          - rhc4tp start;
+          - docker-sync start
+          - docker exec -it localsandbox_httpd_1 '/bin/bash'
           - clear
-          - vagrant up
-          - vagrant ssh
           - cd /var/www/rhc4tp/Connect/sites/default
+          - drush status
         - debug:
-          - cd ./rhc4tp/Vagrant
+          - cd ./rhc4tp/sandbox/local-sandbox
           - sleep 140
           - clear
-          - vagrant ssh -- -t 'cd /var/www/rhc4tp/Connect/sites/default; /bin/bash --rcfile <(echo ". ~/.bashrc; drush ws --tail")'
+          - docker exec -it localsandbox_httpd_1 '/bin/bash'
+          - cd /var/www/rhc4tp/Connect/sites/default
+          - drush ws --tail
   - theme:
       layout: main-horizontal
       panes:
         - root:
-          - cd ./rhc4tp/Connect/sites/all/themes/rhc4tp
+          - cd ./rhc4tp/Connect/sites/all/themes/rhc_ui
+          - nvm use
+          - composer install
+          - npm install
           - clear
+          - npm run build
         - compiler:
-          - cd ./rhc4tp/Connect/sites/all/themes/rhc4tp
+          - cd ./rhc4tp/Connect/sites/all/themes/rhc_ui
           - sleep 140
           - clear
-          - grunt s
+          - npm run watch
   - project:
       layout: main-horizontal
       panes:
         - main:
-        - phpstorm: phpstorm .
+        - phpstorm: phpstorm /home/dreese/Repos/rhc
 
