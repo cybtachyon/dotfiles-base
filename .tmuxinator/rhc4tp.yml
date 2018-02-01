@@ -16,7 +16,7 @@ windows:
           - git status
         - docker:
           - cd ./rhc4tp/sandbox/local-sandbox
-          - rhc4tp start;
+          - rhc4tp start
           - docker-sync start
           - docker exec -it localsandbox_httpd_1 '/bin/bash'
           - clear
