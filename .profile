@@ -51,6 +51,8 @@ git config --global alias.sa "stash apply stash^{/$*}"
 git config --global alias.crn "!crn() { git log --pretty='%s' \$1..\$2 | sed -e '/^Merge/ d' | xclip -selection c; }; crn"
 # Copy Branch Commits to Clipboard
 git config --global alias.cbn "!cbn() { git cherry -v develop | sed -e 's/^.\{0,43\}//' | xclip -selection c; }; cbn"
+# Solves long filename issues on Windows
+git config --system core.longpaths true
 
 ## Environment-specific scripts.
 # Linux
